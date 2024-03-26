@@ -14,6 +14,7 @@
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
+                    <li><a href="#">MyServices</a></li>
                     <li><a href="#">Portfolio</a></li>
                     <li><a href="#">contact</a></li>
                 </ul>
@@ -26,17 +27,67 @@
         </div>
 
     </div> 
+    <!---------------ABout------------>
     <div id="about">
         <div class="container">
             <div class="row">
-                <div class="about-col-1"></div>
-                <img src="dev.png">
-                <div class="about-col-2"></div>
-                <h1>About Me</h1>
+                <div class="about-col-1">
+                    <img src="dev.png">
+                </div> 
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis ad repudiandae non dolore provident corrupti ea dolor tempora harum earum libero quidem, architecto ipsam dolorum nulla nemo quae delectus esse.</p>
+                    <!-----apartitioning the about section ---->
+                    <!---------------opentab adds clicking events------>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul> 
+                            <li><span>UI/UX</span><br>designing Web/App interfaces</li>
+                            <li><span>Web Development</span><br>Web App Development</li>
+                            <li><span>App Development</span><br>Building Android/ios apps</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2022</span><br>Second attachment in BCRH</li>
+                            <li><span>2022</span><br>Attach at County Government</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2019 - 2023</span><br>Studied at kibabii university</li>
+                            <li><span>2015 - 2018</span><br>Studied at MHSK</li>
+                            <li><span>2007 - 2014</span><br>Studied at Alpha junior Academy</li>
+                        </ul>
+                    </div>
+                </div>  
             </div>
         </div>
 
     </div> 
+    <script> 
+    const tablinks=documents.getElementsByClassname("tab-links");
+    const tabcontents=documents.getElementsByClassname("tab-contents");
+
+    function opentab(tabname){
+
+        for(tablink of tablinks){
+            tablink.classlist.remove("active-link");
+        }
+        for(tablink of tabcontents){
+            tabcontent.classlist.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementsById(tabname).classlist.add("active-tab");   }
+
+
+
+    </script>
+
    
 </body>
 </html>
